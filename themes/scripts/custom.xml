@@ -1,0 +1,24 @@
+<theme>
+	<formatVersion>4</formatVersion>
+
+	<view name="system">
+		<text name="info1" extra="true">
+			<text>Launch custom scripts from the menu</text>
+		</text>
+	</view>
+
+	<view name="system, basic, detailed">
+		<image name="band1" extra="true">
+			<color>FF69B4</color>
+		</image>
+		<image name="band2" extra="true">
+			<color>36D7B7</color>
+		</image>
+		<image name="band3" extra="true">
+			<color>4B77BE</color>
+		</image>
+		<image name="band4" extra="true">
+			<color>BE90D4</color>
+		</image>
+	</view>
+</theme>
