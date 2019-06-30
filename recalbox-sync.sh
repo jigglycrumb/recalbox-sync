@@ -19,7 +19,7 @@ logheader() {
   echo "" >>$LOGFILE
 }
 
-pull_remote() {
+pull() {
   echo -n "Pulling latest roms and saves: "
 
   logheader
@@ -35,7 +35,7 @@ pull_remote() {
   return $RETVAL
 }
 
-push_remote() {
+push() {
   echo -n "Pushing latest roms and saves: "
 
   logheader
@@ -52,8 +52,8 @@ push_remote() {
 }
 
 sync() {
-  push_remote
-  pull_remote
+  push
+  pull
 }
 
 cron() {
@@ -66,11 +66,11 @@ cron() {
 
 case "$1" in
 start)
-  pull_remote
+  pull
   cron &
   ;;
 stop)
-  push_remote
+  push
   ;;
 restart)
   sync
@@ -78,8 +78,14 @@ restart)
 reload)
   sync
   ;;
+push)
+  push
+  ;;
+pull)
+  pull
+  ;;
 *)
-  echo "Usage: $0 {start|stop|restart|reload}"
+  echo "Usage: $0 {start|stop|restart|reload|push|pull}"
   exit 1
   ;;
 esac
