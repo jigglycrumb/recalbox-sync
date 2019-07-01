@@ -10,7 +10,7 @@ A remote rsync server with a module to sync to. I use OpenMediaVault and its rsy
 
 This will enable sync on boot/shutdown and approx. once an hour
 
-1. Copy `custom.sh` and `recalbox-sync.sh` to `/recalbox/share/system`
+1. Copy both scripts from `system` to `/recalbox/share/system`
 
 2. Edit `REMOTE` in `recalbox-sync.sh` to match your rsync server. Optionally check `RSYNC_OPTS` if you want to change anything
 
@@ -35,7 +35,9 @@ This will enable triggering the sync (as well as any other shell script) from th
     <path>/recalbox/share/system/scripts</path>
     <extension>.sh</extension>
     <command>/bin/sh %ROM%</command>
+    <platform>ignore</platform>
     <theme>scripts</theme>
+    <emulators/>
   </system>
 ```
 
