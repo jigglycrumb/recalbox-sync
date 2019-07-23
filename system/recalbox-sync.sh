@@ -20,7 +20,7 @@ logheader() {
 }
 
 pull() {
-  echo -n "Pulling latest roms and saves: "
+  echo -n "Pulling latest bioses, roms, saves and screenshots: "
 
   logheader
 
@@ -36,14 +36,12 @@ pull() {
 }
 
 push() {
-  echo -n "Pushing latest roms and saves: "
+  echo -n "Pushing latest saves and screenshots"
 
   logheader
 
-  rsync $RSYNC_OPTS $LOCAL/bios $REMOTE/ >>$LOGFILE &&
-    rsync $RSYNC_OPTS $LOCAL/saves $REMOTE/ >>$LOGFILE &&
-    rsync $RSYNC_OPTS $LOCAL/screenshots $REMOTE/ >>$LOGFILE &&
-    rsync $RSYNC_OPTS $LOCAL/roms $REMOTE/ >>$LOGFILE
+  rsync $RSYNC_OPTS $LOCAL/saves $REMOTE/ >>$LOGFILE &&
+    rsync $RSYNC_OPTS $LOCAL/screenshots $REMOTE/ >>$LOGFILE
 
   RETVAL=$?
   echo "done"
